@@ -424,7 +424,10 @@ class ModernCalendarApp:
                              weekendbackground=COLORS["card"],
                              othermonthbackground=COLORS["background"],
                              othermonthforeground=COLORS["text_light"],
-                             font=FONTS["normal"])
+                             font=FONTS["normal"],
+                             showothermonthdays=False,
+                             showweeknumbers=False,
+                             markwidth=1)  # Make the marker small
 
         self.calendar.pack(fill=tk.BOTH, expand=True, padx=15, pady=10)
 
@@ -498,11 +501,14 @@ class ModernCalendarApp:
             dt = datetime.datetime.fromisoformat(event["datetime"])
             self.calendar.calevent_create(dt.date(), event["title"], 'event')  # Create event marker
         
-        # Configure the marker appearance to show a small dot
+        # Configure the marker appearance to show a small dot below the date
         self.calendar.tag_config('event', 
-                               background=COLORS["background"],  # Keep cell background normal
-                               foreground=COLORS["text"],       # Keep text color normal
-                               markbackground=COLORS["primary"])  # Add a dot in primary color
+                               background=COLORS["background"],
+                               foreground=COLORS["text"],
+                               markbackground=COLORS["primary"],
+                               markheight=4,  # Small height for the dot
+                               markwidth=4,   # Small width for the dot
+                               justify='center')
 
     def add_event(self):
         dialog = ModernEventDialog(self.root)
