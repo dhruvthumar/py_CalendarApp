@@ -6,8 +6,8 @@ import datetime
 import requests
 
 # === CONFIGURATION: Set these with your Telegram Bot details ===
-TELEGRAM_BOT_TOKEN = "7777704982:AAENdawbGbre5MjIP9F6ckBV2g3EiELBRj4"  # Replace with your bot token
-TELEGRAM_CHAT_ID = "886470354"      # Replace with your chat id
+TELEGRAM_BOT_TOKEN = "XXXX"  # Replace with your bot token
+TELEGRAM_CHAT_ID = "XXXX"      # Replace with your chat id
 
 EVENTS_FILE = "events.json"
 
